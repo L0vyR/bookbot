@@ -1,4 +1,9 @@
 
+def get_book_text(file_path):
+    with open(file_path) as f:
+        file_content = f.read()
+        return file_content
+
 def WordsCounter(book_content):
     words_list = book_content.split()
     print("----------- Word Count ----------")
@@ -25,14 +30,22 @@ def CharacterCounter(book_content):
     
     return character_count_result
 
-def PrintReport(dictionnary_input):
+def PrintReport(book_path):
     
+    book_content = get_book_text(book_path)
+
+    print("Analyzing book found at books/frankenstein.txt...")
+
+    # Display words count Message
+    WordsCounter(book_content)
+    
+    character_counter_dict = CharacterCounter(book_content)
     sort_list = []
     
-    for entry in dictionnary_input:
+    for entry in character_counter_dict:
         temp_dict = {}
         temp_dict["letter"] = entry
-        temp_dict["count"] = dictionnary_input.get(entry)
+        temp_dict["count"] = character_counter_dict.get(entry)
         sort_list.append(temp_dict)
     
     def sort_on(dict):
