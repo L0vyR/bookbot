@@ -1,4 +1,3 @@
 # bookbot
 
-
-BookBot is my first [Boot.dev](https://www.boot.dev) project!
+Script that display words count and characters count for a text file
