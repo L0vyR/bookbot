@@ -14,9 +14,6 @@ def get_book_text(file_path):
         file_content = f.read()
         return file_content
 
-#def main():
-#    print(get_book_text("/home/sweery/workspace/github.com/bookbot/books/frankenstein.txt"))
-
 
 print("============ BOOKBOT ============")
 print("Analyzing book found at books/frankenstein.txt...")
